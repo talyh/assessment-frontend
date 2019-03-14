@@ -6,9 +6,12 @@ import sampleData from 'assessment-frontend/models/fixtures/sample-data';
 let Product = EmberObject.extend({
   name: null,
   data: [],
-  productDataSubset: Ember.computed('data', function() {
+  productDataSubset: Ember.computed('data', function () {
     return this.get('data').slice(0, 7);
-  })
+  }),
+  init() {
+    // console.log("data", this.data)
+  },
 })
 
 export default Route.extend({
