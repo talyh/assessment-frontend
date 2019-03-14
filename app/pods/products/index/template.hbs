@@ -2,12 +2,12 @@
 
 {{#each products as |product|}}
 
-{{ data-grid 
+{{ product-grid
+    size="small"
     title=product.name 
-    titleLink=product.id
-    customActions=customActions
     data=product.productDataSubset
     footer="Sample Rows"
+    productID=product.id
 }}
 
 {{/each}}

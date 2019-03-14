@@ -1,11 +1,9 @@
 <header>
-    <h4>{{link-to title 'products.show' titleLink}}</h4>
+    <h4>{{title}}</h4>
     {{#if customActions}}
     {{#each-in customActions as |name perform|}}
-    <button onclick={{perform}}>{{name}}</button>
+    <button onclick={{action perform}}>{{name}}</button>
     {{/each-in}}
-    {{else}}
-    <div>2</div>
     {{/if}}
 </header>
 <div>
