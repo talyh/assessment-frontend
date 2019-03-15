@@ -1,0 +1,32 @@
+<img src='../assets/avatar.png'>
+<h3>{{publisher.title}}</h3>
+
+{{#if (eq mode "summary")}}
+
+<h5>Datasets in this Data Product</h5>
+
+{{#each products as |product|}}
+{{ product-grid
+    size=gridSize
+    title=product.name 
+    data=product.productDataSubset
+    footer="Sample Rows"
+    productID=product.id
+}}
+{{/each}}
+
+{{else if (eq mode "details")}}
+
+{{!-- TODO Consider better way to handle cases where a single product is received --}}
+
+{{ product-grid
+    size=gridSize
+    title=products.name 
+    data=products.data
+    footer="Sample Rows"
+    productID=product.id
+}}
+
+{{/if}}
+
+{{yield}}

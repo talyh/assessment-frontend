@@ -1,15 +1,7 @@
-<h3>Product Page - Index - {{publisher.title}}</h3>
-
-{{#each products as |product|}}
-
-{{ product-grid
-    size="small"
-    title=product.name 
-    data=product.productDataSubset
-    footer="Sample Rows"
-    productID=product.id
+{{ publisher-page 
+    publisher=publisher
+    products=products
+    mode="summary"
 }}
-
-{{/each}}
 
 {{outlet}}
