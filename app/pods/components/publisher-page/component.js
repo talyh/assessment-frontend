@@ -6,4 +6,5 @@ export default Component.extend({
     products: null,
     mode: "summary",
     gridSize: Ember.computed("mode", function () { return this.get("mode") == "summary" ? "small" : "large" }),
+    logoSize: Ember.computed("mode", function () { return `logo-${this.mode}` })
 });

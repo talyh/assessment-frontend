@@ -1,12 +1,16 @@
 <div class="publisher">
     <div class="header-container">
-        <img src='../assets/avatar.png'>
-        <h3>{{publisher.title}}</h3>
+        <img src='../assets/avatar.png' class={{logoSize}}>
+        <div class="title">
+            <span>{{publisher.title}}</span>
+        </div>
     </div>
-    <div class="content-container">
+    <div class=" content-container">
         {{#if (eq mode "summary")}}
 
-        <h5>Datasets in this Data Product</h5>
+        <div class="info">
+            <span>Datasets in this Data Product</span>
+        </div>
 
         {{#each products as |product|}}
         {{ product-grid

@@ -5,11 +5,16 @@
 // color sheet
 $main-text-color: #262626;
 $secondary-text-color: #013548;
-$tertiary-text-color: #f8fafa;
+$tertiary-text-color: #ffffff;
+$quarternary-text-color: #7d8e9e;
+
 $primary-actions-color: #087f9d;
+
 $primary-background-color: #f8fbfe;
-$secondary-background-color: #f8fafa;
-$tertiary-background-color: #0f3a4d;
+$secondary-background-color: #ffffff;
+$tertiary-background-color: #134257;
+
+$primary-borders-color: #cdd3d8;
 
 // font sheet
 $primary-font-family: 'Source Sans Pro', sans-serif;
@@ -31,54 +36,73 @@ p {
   line-height: 24px;
 }
 
-h4 {
-    margin      : 0;
-    font-size   : 20px;
-    font-family : $secondary-font-family;
-}
-
 button {
-    color           : $primary-actions-color;
-    padding         : 3px 10px;
-    text-decoration : none;
-    font-size       : 16px;
-    text-transform  : uppercase;
-    font-family     : $secondary-font-family
+    color: $primary-actions-color;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: $secondary-font-family
 }
 
 .publisher {
     .header-container {
         background-color: $tertiary-background-color;
         display: flex;
-        color: $tertiary-text-color;
+        align-items: center;
+
+        .logo-summary, .logo-details {
+            padding: 20px;
+        }
+
+        .logo-summary {
+            width: 60px;
+        }
+        .logo-details {
+            width: 40px;
+        }
+
+        .title {
+            order: 1;
+            flex: 5 1 auto;
+            font-family: 'Quantico', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: $tertiary-text-color;
+        }
     }
 
     .content-container {
-
+        .info {
+            margin: 20px;
+            color: $quarternary-text-color;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
     }
 }
 
 .dataset {
-    border: 0.5px solid #DDD;
+    border: 0.5px solid$primary-borders-color;
     margin-bottom: 40px;
+    box-shadow: -1px 1px 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
 
     .header-container
     {
-        // display: flex;
-        // align-items: baseline;
-        // background-color: white;
-
-        border-bottom : 1px solid #d6d8db;
         display: flex;
         background-color: $secondary-background-color;
         padding: 10px;
         align-items: center;
         justify-content: space-between;
+        margin: 2px;
     
         .title {
             order: 1;
             flex: 5 1 auto;
-            font-family: 'Quantico', sans-serif;
+            font-family: $secondary-font-family;
             font-weight: bold;
             font-size: 18px;
             color: $secondary-text-color;
@@ -89,8 +113,8 @@ button {
             flex: 2 1 auto;
 
             .products-summary-actions {
-                color           : $primary-actions-color;
-                padding         : 3px 10px;
+                color: $primary-actions-color;
+                padding: 3px 10px;
                 background: transparent;
                 border: none;
             }
@@ -102,24 +126,22 @@ button {
     }
 
     .content-container {
-        overflow : scroll;
+        overflow: auto;
+        margin: 2px;
+        background-color: $secondary-background-color;
 
         table {
-            margin-top: 20px;
             box-shadow: 0 0 1px rgba(0,0,0,0.4);
+            border: 1px solid $primary-borders-color;
         
             thead {
                 background-color: $primary-background-color;
-                align-items: center;
-                font-weight: bold;
             }
-        
-            tbody {
-                background-color: $secondary-background-color;
-               
-                td{
-                    border-bottom    : 1px solid #d6d8db;
-                }
+
+            td, th
+            {
+                border-bottom: 1px solid $primary-borders-color;
+                padding: 5px 10px;
             }
           }
     }
@@ -132,6 +154,7 @@ button {
             padding: 6px;
             font-weight: bold;
             color: $secondary-text-color;
+            margin: 2px;
         }
     }    
 }
