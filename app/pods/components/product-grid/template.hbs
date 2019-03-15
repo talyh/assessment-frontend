@@ -3,11 +3,22 @@
     {{!-- TODO Find a way to interpret interpolate properties to allow 
     customActions[size] instead of an if --}}
     {{#if (eq size "small")}}
-    {{#each-in customActions.small as |name perform|}}
+    {{#each-in buttons.small as |name perform|}}
     <button onclick={{action perform}}>{{name}}</button>
     {{/each-in}}
     {{else if (eq size "large")}}
-    {{#each-in customActions.large as |name perform|}}
+    {{#each-in buttons.large as |name perform|}}
+    <button onclick={{action perform}}>{{name}}</button>
+    {{/each-in}}
+    {{/if}}
+    {{!-- TODO Once styling is added, determine whether this can be merged
+    with the if block for buttons --}}
+    {{#if (eq size "small")}}
+    {{#each-in tabs.small.options as |name perform|}}
+    <button onclick={{action perform}}>{{name}}</button>
+    {{/each-in}}
+    {{else if (eq size "large")}}
+    {{#each-in tabs.large.options as |name perform|}}
     <button onclick={{action perform}}>{{name}}</button>
     {{/each-in}}
     {{/if}}

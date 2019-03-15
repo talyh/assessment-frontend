@@ -3,13 +3,22 @@ import { inject as service } from '@ember/service';
 
 export default Component.extend({
     size: "small",
-    customActions: {
+    buttons: {
         small: {
             "Expand": function () { this.get('router').transitionTo('products.show', this.productID); },
         },
         large: {
-            "Coverage": () => console.log("coverage"),
-            "Download": () => console.log("download")
+            "Coverage": () => console.log("Coverage"),
+            "Download": () => console.log("Download")
+        }
+    },
+    tabs: {
+        large: {
+            options: {
+                "Data Sample": () => console.log("Data Sample"),
+                "Coverage": () => console.log("Coverage")
+            },
+            selected: 0
         }
     },
     title: null,
