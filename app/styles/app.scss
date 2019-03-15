@@ -1,2 +1,137 @@
-// Style files in the pods folder are automatically loaded in.
 @import 'pod-styles';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css?family=Quantico');
+
+// color sheet
+$main-text-color: #262626;
+$secondary-text-color: #013548;
+$tertiary-text-color: #f8fafa;
+$primary-actions-color: #087f9d;
+$primary-background-color: #f8fbfe;
+$secondary-background-color: #f8fafa;
+$tertiary-background-color: #0f3a4d;
+
+// font sheet
+$primary-font-family: 'Source Sans Pro', sans-serif;
+$secondary-font-family: 'Quantico', sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: $primary-font-family; 
+  min-width: 768px;
+  background-color: $primary-background-color;
+  color: $main-text-color;
+}
+
+p {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h4 {
+    margin      : 0;
+    font-size   : 20px;
+    font-family : $secondary-font-family;
+}
+
+button {
+    color           : $primary-actions-color;
+    padding         : 3px 10px;
+    text-decoration : none;
+    font-size       : 16px;
+    text-transform  : uppercase;
+    font-family     : $secondary-font-family
+}
+
+.publisher {
+    .header-container {
+        background-color: $tertiary-background-color;
+        display: flex;
+        color: $tertiary-text-color;
+    }
+
+    .content-container {
+
+    }
+}
+
+.dataset {
+    border: 0.5px solid #DDD;
+    margin-bottom: 40px;
+
+    .header-container
+    {
+        // display: flex;
+        // align-items: baseline;
+        // background-color: white;
+
+        border-bottom : 1px solid #d6d8db;
+        display: flex;
+        background-color: $secondary-background-color;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+    
+        .title {
+            order: 1;
+            flex: 5 1 auto;
+            font-family: 'Quantico', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            color: $secondary-text-color;
+        }
+    
+        .actions {
+            order: 2;
+            flex: 2 1 auto;
+
+            .products-summary-actions {
+                color           : $primary-actions-color;
+                padding         : 3px 10px;
+                background: transparent;
+                border: none;
+            }
+        }
+
+        .tabs {
+
+        }
+    }
+
+    .content-container {
+        overflow : scroll;
+
+        table {
+            margin-top: 20px;
+            box-shadow: 0 0 1px rgba(0,0,0,0.4);
+        
+            thead {
+                background-color: $primary-background-color;
+                align-items: center;
+                font-weight: bold;
+            }
+        
+            tbody {
+                background-color: $secondary-background-color;
+               
+                td{
+                    border-bottom    : 1px solid #d6d8db;
+                }
+            }
+          }
+    }
+
+    .footer-container {
+        footer {
+            text-transform: uppercase;
+            border-top: 1px solid #d6d8db;
+            background-color : #f6fafd;
+            padding: 6px;
+            font-weight: bold;
+            color: $secondary-text-color;
+        }
+    }    
+}
